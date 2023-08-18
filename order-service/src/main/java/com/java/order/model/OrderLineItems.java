@@ -20,6 +20,9 @@ public class OrderLineItems {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne
+    private Order order;
+
     private String skuCode;
 
     private BigDecimal price;

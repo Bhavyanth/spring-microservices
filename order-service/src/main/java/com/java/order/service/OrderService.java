@@ -29,7 +29,7 @@ public class OrderService {
 
        List<OrderLineItems> orderLineItems = orderRequest.getOrderLineItemsDtoList().stream().map(this::mapToDto).toList();
        order.setOrderLineItems(orderLineItems);
-
+       orderLineItems.forEach(item -> item.setOrder(order));
        List<String> skuCodes = order.getOrderLineItems().stream().map(OrderLineItems::getSkuCode).toList();
 
        // Call the inventory service to check the availability of stock
