@@ -5,3 +5,6 @@
 #ignore class files and jars
 .class
 .jar
+
+/mysql_keycloak_data/
+/mongo-data/
